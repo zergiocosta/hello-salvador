@@ -37,4 +37,4 @@ function hello_salvador_background() {
 		}
 	</style> <?php
 }
-add_action('admin_init', 'hello_salvador_background');
+add_action('admin_head', 'hello_salvador_background');
