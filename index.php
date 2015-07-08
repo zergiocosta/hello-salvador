@@ -10,26 +10,38 @@
  * License: GPLv2
  */
 
-
 function hello_salvador_background() { 
-	$images = array(
-		'001.jpg',
-		'002.jpg',
-		'003.jpg',
-		'004.jpg',
-		'005.jpg',
-		'006.jpg',
-		'007.jpg',
-		'008.jpg'
-	); 
-	$image = $images[array_rand($images)];
-	$image = plugin_dir_url(__FILE__) . 'images/' . $image; ?>
+	$root = plugin_dir_path(__FILE__) . 'images/';
+	$iter = new RecursiveIteratorIterator(
+	    new RecursiveDirectoryIterator($root, RecursiveDirectoryIterator::SKIP_DOTS),
+	    RecursiveIteratorIterator::SELF_FIRST,
+	    RecursiveIteratorIterator::CATCH_GET_CHILD 
+	);
+	$lvls = 1;
+	$iter->setMaxDepth($lvls);
+	$paths = array($root);
+	foreach ($iter as $path => $dir) {
+	    $paths[] = $path;
+	}
+
+	$imagebg = $paths[array_rand($paths)];
+	$imagebg = explode("/", $imagebg);
+	$imagebg = array_reverse($imagebg);
+
+	if (!empty($imagebg)) {
+		$imageurl = plugin_dir_url(__FILE__) . 'images/' . $imagebg[0];
+	} else {
+		$imageurl = plugin_dir_url(__FILE__) . 'images/001.jpg';
+	}
+
+
+	?>
 	<style>
 		html {
 			background-color: transparent !important;
 		} 
 		body { 
-			background: url('<?php echo $image; ?>') no-repeat center center fixed; 
+			background: url('<?php echo $imageurl; ?>') no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			   -moz-background-size: cover;
 				 -o-background-size: cover;
