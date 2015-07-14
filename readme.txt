@@ -1,5 +1,5 @@
 === Hello Salvador ===
-Contributors: sergiuscosta
+Contributors: sergiuscosta, leobaiano
 Donate link: http://www.sergiocosta.net.br/
 Tags: salvador, bahia, brasil, beach, missing, city, wordcamp, wordcana, wordcampsalvador, wordpress bahia, wordpress brasil, wordpress salvador
 Requires at least: 3.0
@@ -12,7 +12,7 @@ For whose missing Salvador, Bahia
 
 == Description ==
 
-= A very simple way to remember Salvador while working with WordPress :) =
+= A very fancy way to remember Salvador while working with WordPress :) =
 
 == Installation ==
 
