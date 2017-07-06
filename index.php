@@ -5,7 +5,7 @@
  * Description: Simple way to remember Salvador, Bahia
  * Version: 1.0.0
  * Author: Sergio Costa
- * Author URI: http://sergiocosta.net.br/
+ * Author URI: http://republicainterativa.com.br/
  * Text Domain: hellosalvador
  * License: GPLv2
  */
@@ -32,10 +32,8 @@ function hello_salvador_background() {
 		$imageurl = plugin_dir_url(__FILE__) . 'images/' . $imagebg[0];
 	} else {
 		$imageurl = plugin_dir_url(__FILE__) . 'images/001.jpg';
-	}
+	} ?>
 
-
-	?>
 	<style>
 		html {
 			background-color: transparent !important;
@@ -44,8 +42,8 @@ function hello_salvador_background() {
 			background: url('<?php echo $imageurl; ?>') no-repeat center center fixed; 
 			-webkit-background-size: cover;
 			   -moz-background-size: cover;
-				 -o-background-size: cover;
-					background-size: cover;
+			     -o-background-size: cover;
+				background-size: cover;
 		}
 	</style> <?php
 }
